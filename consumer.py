@@ -2,7 +2,9 @@ from kafka import KafkaConsumer
 from const import *
 import sys
 
-consumer = KafkaConsumer(bootstrap_servers=[BROKER_ADDR + ':' + BROKER_PORT])
+consumer = KafkaConsumer(bootstrap_servers=[BROKER_ADDR + ':' + BROKER_PORT],
+                        auto_offset_reset='earliest',
+                        enable_auto_commit='false');
 try:
   topic = sys.argv[1]
 except:
