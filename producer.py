@@ -2,7 +2,7 @@ from kafka import KafkaProducer
 from const import *
 import sys
 
-topic = ['Health', 'Sports', 'Television']
+topics = ['Health', 'Sports', 'Television']
 
 producer = KafkaProducer(bootstrap_servers=[BROKER_ADDR + ':' + BROKER_PORT])
 
